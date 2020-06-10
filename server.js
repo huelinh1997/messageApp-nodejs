@@ -2,7 +2,7 @@ let express = require("express");
 var cors = require("cors");
 let app = express();
 const bodyParser = require("body-parser");
-//require("dotenv").load();
+require("dotenv").load;
 let port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));

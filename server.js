@@ -18,6 +18,13 @@ app.use(function (req, res) {
 	res.status(404).send({ url: req.originalUrl + " not found" });
 });
 
-app.listen(port);
+//app.listen(port);
+app.listen(process.env.PORT || 8080, function () {
+	console.log(
+		"Express server listening on port %d in %s mode",
+		this.address().port,
+		app.settings.env
+	);
+});
 
-console.log("RESTful API server started on: " + port);
+//console.log("RESTful API server started on: " + port);

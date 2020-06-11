@@ -45,7 +45,7 @@ module.exports = {
 			});
 		});
 	},
-	delete: (req, res) => {
+	deleteMes: (req, res) => {
 		let sql = "DELETE FROM message WHERE id = ?";
 		db.query(sql, [req.params.messageId], (err, response) => {
 			if (err) throw err;

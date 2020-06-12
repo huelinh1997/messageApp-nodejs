@@ -10,8 +10,6 @@ module.exports = {
 
 		db.query(sql, (err, response) => {
 			if (err) throw err;
-			console.log("response:", response);
-			//res.redirect("./message");
 			res.json(response);
 		});
 	},
@@ -56,7 +54,6 @@ module.exports = {
 		let sql = `SELECT * FROM message WHERE mes LIKE N'%${req.query.search}%'`;
 		db.query(sql, [req.query.search], (err, response) => {
 			if (err) throw err;
-			console.log("res:", response);
 			res.json({ data: response });
 		});
 	},
